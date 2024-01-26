@@ -8,8 +8,10 @@ extra_link_args = []
 
 if not scipoptdir:
     raise Exception("Please set the environment variable SCIPOPTDIR to point to the SCIP installation directory.")
+else: 
+    print(f"using SCIPOPTDIR={scipoptdir}")
 
-# if SCIPOPTDIR is not set, we assume that SCIP is installed globally
+# if SCIPOPTDIR is not set, we assume that SCIP is installed globaslly
 if not scipoptdir:
     if platform.system() == "Darwin":
         includedir = "/usr/local/include/"
