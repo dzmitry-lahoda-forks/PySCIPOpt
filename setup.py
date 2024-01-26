@@ -3,9 +3,11 @@ import os, platform, sys, re
 
 # look for environment variable that specifies path to SCIP
 scipoptdir = os.environ.get("SCIPOPTDIR", "").strip('"')
-
 extra_compile_args = []
 extra_link_args = []
+
+if not scipoptdir:
+    raise Exception("Please set the environment variable SCIPOPTDIR to point to the SCIP installation directory.")
 
 # if SCIPOPTDIR is not set, we assume that SCIP is installed globally
 if not scipoptdir:
